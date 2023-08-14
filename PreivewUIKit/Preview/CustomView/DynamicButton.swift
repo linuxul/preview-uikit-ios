@@ -1,5 +1,5 @@
 //
-//  BorderedButton.swift
+//  DynamicButton.swift
 //  PreivewUIKit
 //
 //  Created by linuxul on 2023/08/14.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class BorderedButton: UIButton {
+final class DynamicButton: UIButton {
 
     var cornerRadius: CGFloat = 0.0 {
         didSet {
@@ -38,7 +38,6 @@ final class BorderedButton: UIButton {
     }
 
     private func commonInit() {
-        
         backgroundColor = .red
     }
 }
@@ -47,21 +46,24 @@ final class BorderedButton: UIButton {
 import SwiftUI
 
 @available(iOS 13.0, *)
-struct BorderButton_Preview: PreviewProvider {
+struct DynamicButton_Preview: PreviewProvider {
     static var previews: some View {
-        Group {
-            UIViewPreview {
-                let button = BorderedButton(frame: .zero)
-                button.setTitle("BorderedButton Touch me!!", for: .normal)
-                button.setTitleColor(.white, for: .normal)
-                return button
-            }
-            UIViewPreview {
-                let button = BorderedButton(frame: .zero)
-                button.setTitle("BorderedButton Touch me!!", for: .normal)
-                button.setTitleColor(.yellow, for: .normal)
-                return button
-            }
+        ForEach(ContentSizeCategory.allCases, id: \.self) { sizeCategory in
+            Group {
+                UIViewPreview {
+                    let button = DynamicButton(frame: .zero)
+                    button.setTitle("DynamicButton Touch me!!", for: .normal)
+                    button.setTitleColor(.white, for: .normal)
+                    return button
+                }
+                UIViewPreview {
+                    let button = DynamicButton(frame: .zero)
+                    button.setTitle("DynamicButton Touch me!!", for: .normal)
+                    button.setTitleColor(.yellow, for: .normal)
+                    return button
+                }
+            }.environment(\.sizeCategory, sizeCategory)
+             .previewDisplayName("\(sizeCategory)")
         }
         .previewLayout(.sizeThatFits)
         .padding(10)

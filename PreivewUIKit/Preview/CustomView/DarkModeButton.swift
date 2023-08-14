@@ -52,7 +52,7 @@ struct DarkModeButton_Preview: PreviewProvider {
             Group {
                 UIViewPreview {
                     let button = DarkModeButton(frame: .zero)
-                    button.setTitle("Touch me!!", for: .normal)
+                    button.setTitle("DarkMode Touch me!!", for: .normal)
                     button.setTitleColor(.orange, for: .normal)
                     button.cornerRadius = 8
                     button.borderWidth = 1
@@ -62,7 +62,7 @@ struct DarkModeButton_Preview: PreviewProvider {
                  .previewDisplayName("\(colorScheme)")
                 UIViewPreview {
                     let button = DarkModeButton(frame: .zero)
-                    button.setTitle("Touch me!!", for: .normal)
+                    button.setTitle("DarkMode Touch me!!", for: .normal)
                     button.setTitleColor(.green, for: .normal)
                     button.cornerRadius = 8
                     button.borderWidth = 1

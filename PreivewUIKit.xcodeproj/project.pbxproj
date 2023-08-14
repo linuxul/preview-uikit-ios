@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		AF7B50DA2A8A54BC006FA435 /* DarkModeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7B50D92A8A54BC006FA435 /* DarkModeButton.swift */; };
+		AF7B50DC2A8A5ADB006FA435 /* DynamicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7B50DB2A8A5ADB006FA435 /* DynamicButton.swift */; };
+		AF7B50DE2A8A5C34006FA435 /* LocalesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7B50DD2A8A5C34006FA435 /* LocalesButton.swift */; };
+		AF7B50E22A8A5D91006FA435 /* Preview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF7B50E12A8A5D91006FA435 /* Preview.storyboard */; };
+		AF7B50E42A8A5DAC006FA435 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7B50E32A8A5DAC006FA435 /* PreviewViewController.swift */; };
 		AFDB086A2A8A3D8D00F7C26A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB08692A8A3D8D00F7C26A /* AppDelegate.swift */; };
 		AFDB086C2A8A3D8D00F7C26A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB086B2A8A3D8D00F7C26A /* SceneDelegate.swift */; };
 		AFDB086E2A8A3D8D00F7C26A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB086D2A8A3D8D00F7C26A /* ViewController.swift */; };
@@ -22,6 +26,10 @@
 
 /* Begin PBXFileReference section */
 		AF7B50D92A8A54BC006FA435 /* DarkModeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeButton.swift; sourceTree = "<group>"; };
+		AF7B50DB2A8A5ADB006FA435 /* DynamicButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicButton.swift; sourceTree = "<group>"; };
+		AF7B50DD2A8A5C34006FA435 /* LocalesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalesButton.swift; sourceTree = "<group>"; };
+		AF7B50E12A8A5D91006FA435 /* Preview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preview.storyboard; sourceTree = "<group>"; };
+		AF7B50E32A8A5DAC006FA435 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		AFDB08662A8A3D8D00F7C26A /* PreivewUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PreivewUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFDB08692A8A3D8D00F7C26A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFDB086B2A8A3D8D00F7C26A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +55,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF7B50DF2A8A5D4C006FA435 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AF7B50E12A8A5D91006FA435 /* Preview.storyboard */,
+				AF7B50E32A8A5DAC006FA435 /* PreviewViewController.swift */,
+			);
+			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		AF7B50E02A8A5D63006FA435 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				AFDB08832A8A4C6C00F7C26A /* UIViewController+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		AFDB085D2A8A3D8D00F7C26A = {
 			isa = PBXGroup;
 			children = (
@@ -81,7 +106,8 @@
 		AFDB087D2A8A4C4200F7C26A /* Preview */ = {
 			isa = PBXGroup;
 			children = (
-				AFDB08832A8A4C6C00F7C26A /* UIViewController+Extension.swift */,
+				AF7B50E02A8A5D63006FA435 /* Extension */,
+				AF7B50DF2A8A5D4C006FA435 /* UIViewController */,
 				AFDB08852A8A4C7A00F7C26A /* CustomView */,
 				AFDB087E2A8A4C5B00F7C26A /* Cell */,
 			);
@@ -102,6 +128,8 @@
 			children = (
 				AFDB08862A8A4C7A00F7C26A /* BorderedButton.swift */,
 				AF7B50D92A8A54BC006FA435 /* DarkModeButton.swift */,
+				AF7B50DB2A8A5ADB006FA435 /* DynamicButton.swift */,
+				AF7B50DD2A8A5C34006FA435 /* LocalesButton.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -165,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFDB08762A8A3D8F00F7C26A /* LaunchScreen.storyboard in Resources */,
+				AF7B50E22A8A5D91006FA435 /* Preview.storyboard in Resources */,
 				AFDB08732A8A3D8F00F7C26A /* Assets.xcassets in Resources */,
 				AFDB08812A8A4C5B00F7C26A /* LoveMeViewCell.xib in Resources */,
 				AFDB08712A8A3D8D00F7C26A /* Main.storyboard in Resources */,
@@ -178,13 +207,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF7B50DE2A8A5C34006FA435 /* LocalesButton.swift in Sources */,
 				AF7B50DA2A8A54BC006FA435 /* DarkModeButton.swift in Sources */,
 				AFDB086E2A8A3D8D00F7C26A /* ViewController.swift in Sources */,
+				AF7B50E42A8A5DAC006FA435 /* PreviewViewController.swift in Sources */,
 				AFDB086A2A8A3D8D00F7C26A /* AppDelegate.swift in Sources */,
 				AFDB08872A8A4C7A00F7C26A /* BorderedButton.swift in Sources */,
 				AFDB08822A8A4C5B00F7C26A /* LoveMeViewCell.swift in Sources */,
 				AFDB08842A8A4C6C00F7C26A /* UIViewController+Extension.swift in Sources */,
 				AFDB086C2A8A3D8D00F7C26A /* SceneDelegate.swift in Sources */,
+				AF7B50DC2A8A5ADB006FA435 /* DynamicButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
