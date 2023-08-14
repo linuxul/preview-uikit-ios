@@ -1,6 +1,6 @@
 //
 //  BorderedButton.swift
-//  PreviewTest
+//  PreivewUIKit
 //
 //  Created by linuxul on 2023/08/14.
 //
@@ -9,21 +9,21 @@ import UIKit
 
 final class BorderedButton: UIButton {
 
-    var cornerRadius1: CGFloat = 0.0 {
+    var cornerRadius: CGFloat = 0.0 {
         didSet {
-            self.layer.cornerRadius = cornerRadius1
+            self.layer.cornerRadius = cornerRadius
         }
     }
 
-    var borderWidth1: CGFloat = 0.0 {
+    var borderWidth: CGFloat = 0.0 {
         didSet {
-            self.layer.borderWidth = borderWidth1
+            self.layer.borderWidth = borderWidth
         }
     }
 
-    var borderColor1: UIColor? {
+    var borderColor: UIColor? {
         didSet {
-            self.layer.borderColor = borderColor1?.cgColor
+            self.layer.borderColor = borderColor?.cgColor
         }
     }
 

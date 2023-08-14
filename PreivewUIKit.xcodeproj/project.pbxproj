@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF7B50DA2A8A54BC006FA435 /* DarkModeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7B50D92A8A54BC006FA435 /* DarkModeButton.swift */; };
 		AFDB086A2A8A3D8D00F7C26A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB08692A8A3D8D00F7C26A /* AppDelegate.swift */; };
 		AFDB086C2A8A3D8D00F7C26A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB086B2A8A3D8D00F7C26A /* SceneDelegate.swift */; };
 		AFDB086E2A8A3D8D00F7C26A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB086D2A8A3D8D00F7C26A /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF7B50D92A8A54BC006FA435 /* DarkModeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeButton.swift; sourceTree = "<group>"; };
 		AFDB08662A8A3D8D00F7C26A /* PreivewUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PreivewUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFDB08692A8A3D8D00F7C26A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFDB086B2A8A3D8D00F7C26A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,9 +81,9 @@
 		AFDB087D2A8A4C4200F7C26A /* Preview */ = {
 			isa = PBXGroup;
 			children = (
+				AFDB08832A8A4C6C00F7C26A /* UIViewController+Extension.swift */,
 				AFDB08852A8A4C7A00F7C26A /* CustomView */,
 				AFDB087E2A8A4C5B00F7C26A /* Cell */,
-				AFDB08832A8A4C6C00F7C26A /* UIViewController+Extension.swift */,
 			);
 			path = Preview;
 			sourceTree = "<group>";
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				AFDB08862A8A4C7A00F7C26A /* BorderedButton.swift */,
+				AF7B50D92A8A54BC006FA435 /* DarkModeButton.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF7B50DA2A8A54BC006FA435 /* DarkModeButton.swift in Sources */,
 				AFDB086E2A8A3D8D00F7C26A /* ViewController.swift in Sources */,
 				AFDB086A2A8A3D8D00F7C26A /* AppDelegate.swift in Sources */,
 				AFDB08872A8A4C7A00F7C26A /* BorderedButton.swift in Sources */,
