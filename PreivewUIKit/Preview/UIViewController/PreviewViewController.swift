@@ -20,8 +20,8 @@ class PreviewViewController: UIViewController {
 import SwiftUI
 
 let deviceNames: [String] = [
-    "iPhone 14 Pro",
-    "iPhone 14"
+    DeviceType.iPhone14.name(),
+    DeviceType.iPhone14Pro.name()
 ]
 
 @available(iOS 13.0, *)
