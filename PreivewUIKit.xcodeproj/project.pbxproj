@@ -13,6 +13,8 @@
 		AF7B50E22A8A5D91006FA435 /* Preview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF7B50E12A8A5D91006FA435 /* Preview.storyboard */; };
 		AF7B50E42A8A5DAC006FA435 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7B50E32A8A5DAC006FA435 /* PreviewViewController.swift */; };
 		AF7B50E72A8A6358006FA435 /* PreviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7B50E62A8A6358006FA435 /* PreviewModel.swift */; };
+		AF7B50E92A8A6529006FA435 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7B50E82A8A6529006FA435 /* LogoView.swift */; };
+		AF7B50EB2A8A6534006FA435 /* LogoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF7B50EA2A8A6534006FA435 /* LogoView.xib */; };
 		AFDB086A2A8A3D8D00F7C26A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB08692A8A3D8D00F7C26A /* AppDelegate.swift */; };
 		AFDB086C2A8A3D8D00F7C26A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB086B2A8A3D8D00F7C26A /* SceneDelegate.swift */; };
 		AFDB086E2A8A3D8D00F7C26A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDB086D2A8A3D8D00F7C26A /* ViewController.swift */; };
@@ -32,6 +34,8 @@
 		AF7B50E12A8A5D91006FA435 /* Preview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preview.storyboard; sourceTree = "<group>"; };
 		AF7B50E32A8A5DAC006FA435 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		AF7B50E62A8A6358006FA435 /* PreviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewModel.swift; sourceTree = "<group>"; };
+		AF7B50E82A8A6529006FA435 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
+		AF7B50EA2A8A6534006FA435 /* LogoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogoView.xib; sourceTree = "<group>"; };
 		AFDB08662A8A3D8D00F7C26A /* PreivewUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PreivewUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFDB08692A8A3D8D00F7C26A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFDB086B2A8A3D8D00F7C26A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +145,8 @@
 				AF7B50D92A8A54BC006FA435 /* DarkModeButton.swift */,
 				AF7B50DB2A8A5ADB006FA435 /* DynamicButton.swift */,
 				AF7B50DD2A8A5C34006FA435 /* LocalesButton.swift */,
+				AF7B50E82A8A6529006FA435 /* LogoView.swift */,
+				AF7B50EA2A8A6534006FA435 /* LogoView.xib */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -208,6 +214,7 @@
 				AFDB08732A8A3D8F00F7C26A /* Assets.xcassets in Resources */,
 				AFDB08812A8A4C5B00F7C26A /* LoveMeViewCell.xib in Resources */,
 				AFDB08712A8A3D8D00F7C26A /* Main.storyboard in Resources */,
+				AF7B50EB2A8A6534006FA435 /* LogoView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF7B50DE2A8A5C34006FA435 /* LocalesButton.swift in Sources */,
+				AF7B50E92A8A6529006FA435 /* LogoView.swift in Sources */,
 				AF7B50DA2A8A54BC006FA435 /* DarkModeButton.swift in Sources */,
 				AFDB086E2A8A3D8D00F7C26A /* ViewController.swift in Sources */,
 				AF7B50E72A8A6358006FA435 /* PreviewModel.swift in Sources */,
