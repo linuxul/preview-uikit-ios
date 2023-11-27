@@ -15,7 +15,7 @@ func startSRTMain()
 * SRT 홈으로 진입하려면 먼저 트래픽 제어를 실행한 후 메인 화면으로 이동
 
 ### 1.2. 딥링크
-```swift
+    ```swift
     enum TRDeeplinkType {
       /// 미정 - 데이터 확인 필요
       case unknown
@@ -26,7 +26,7 @@ func startSRTMain()
       /// 결제 상세
       case paymentDetail
     }
-```swift
+    ```swift
 
 - **사용 함수**: `TRCoordinator.shared.gotoMainProxy()`
    - 이 함수는 앱의 딥링크 처리를 하기 위해서 유량제어, 기초 데이터 처리를 한 후 필요한 뷰 이동
