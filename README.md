@@ -9,12 +9,24 @@
 
 - **startSRTMain**
 ```swift
-func startSRTMain() {
+func startSRTMain()
 ```
 * 진입 시 SRT 메인으로 이동
 * SRT 홈으로 진입하려면 먼저 트래픽 제어를 실행한 후 메인 화면으로 이동
 
 #### 1.2. 딥링크
+
+    enum TRDeeplinkType {
+      /// 미정 - 데이터 확인 필요
+      case unknown
+      /// 승차권 상세
+      case detailTicket
+      /// 환급 완료 상세
+      case refundComplete
+      /// 결제 상세
+      case paymentDetail
+  }
+
 - **사용 함수**: `TRCoordinator.shared.gotoMainProxy()`
    - 이 함수는 앱의 데이터베이스(DB)에 저장된 즐겨찾기 정보를 처리합니다.
    - **함수 선언**: 
@@ -22,6 +34,15 @@ func startSRTMain() {
       func gotoMainProxy(_ mainProxyModel: TRMainProxyModel)
       ```
    - **파라미터**: `mainProxyModel` - 딥링크 정보를 포함합니다. 이를 통해 예약번호(`pnrNo`)를 사용하여 특정 티켓 상세 정보, 환불 완료 정보, 결제 상세 정보 등을 처리할 수 있습니다.
+  - **파라미터**:
+
+#### 실행 리스트
+
+| 메뉴 명 | 함수 호출 |
+|---------|----------|-----|
+| 열차 승차권(딥링크)| `TRCoordinator.shared.gotoMainProxy(TRMainProxyModel(type: .detailTicket, pnrNo: "320231100657714"))` |
+| 승차권 환불(딥링크) | `TRCoordinator.shared.gotoMainProxy(TRMainProxyModel(type: .refundComplete, pnrNo: "320231100657714"))` | 
+| 결제 상세정보(딥링크) | `TRCoordinator.shared.gotoMainProxy(TRMainProxyModel(type: .paymentDetail, pnrNo: "320231100657714"))` | 
 
 
 ## 2. SRT 즐겨찾기 사용법
