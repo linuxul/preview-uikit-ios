@@ -15,7 +15,7 @@ func startSRTMain()
 * SRT 홈으로 진입하려면 먼저 트래픽 제어를 실행한 후 메인 화면으로 이동
 
 #### 1.2. 딥링크
-
+```swift
     enum TRDeeplinkType {
       /// 미정 - 데이터 확인 필요
       case unknown
@@ -26,24 +26,27 @@ func startSRTMain()
       /// 결제 상세
       case paymentDetail
     }
-    
+```swift
 
 - **사용 함수**: `TRCoordinator.shared.gotoMainProxy()`
-   - 이 함수는 앱의 데이터베이스(DB)에 저장된 즐겨찾기 정보를 처리합니다.
+   - 이 함수는 앱의 딥링크 처리를 하기 위해서 유량제어, 기초 데이터 처리를 한 후 필요한 뷰 이동
    - **함수 선언**: 
       ```swift
       func gotoMainProxy(_ mainProxyModel: TRMainProxyModel)
       ```
    - **파라미터**: `mainProxyModel` - 딥링크 정보를 포함합니다. 이를 통해 예약번호(`pnrNo`)를 사용하여 특정 티켓 상세 정보, 환불 완료 정보, 결제 상세 정보 등을 처리할 수 있습니다.
-  - **파라미터**:
 
-#### 실행 리스트
+### 1.2 SRT 딥링크 테스트 메뉴
+
+메뉴 위치: 티머니 메인 - 더보기 - [SRT]테스트 메뉴
+
+#### 메뉴 리스트
 
 | 메뉴 명 | 함수 호출 |
 |---------|----------|
-| 열차 승차권(딥링크)| `TRCoordinator.shared.gotoMainProxy(TRMainProxyModel(type: .detailTicket, pnrNo: "320231100657714"))` |
-| 승차권 환불(딥링크) | `TRCoordinator.shared.gotoMainProxy(TRMainProxyModel(type: .refundComplete, pnrNo: "320231100657714"))` | 
-| 결제 상세정보(딥링크) | `TRCoordinator.shared.gotoMainProxy(TRMainProxyModel(type: .paymentDetail, pnrNo: "320231100657714"))` | 
+| 31.열차 승차권(딥링크)| `TRCoordinator.shared.gotoMainProxy(TRMainProxyModel(type: .detailTicket, pnrNo: "320231100657714"))` |
+| 32.승차권 환불(딥링크) | `TRCoordinator.shared.gotoMainProxy(TRMainProxyModel(type: .refundComplete, pnrNo: "320231100657714"))` | 
+| 33.결제 상세정보(딥링크) | `TRCoordinator.shared.gotoMainProxy(TRMainProxyModel(type: .paymentDetail, pnrNo: "320231100657714"))` | 
 
 
 ## 2. SRT 즐겨찾기 사용법
@@ -123,17 +126,17 @@ func deleteFavorite(departureCode: String, arrivalCode: String, completion: @esc
 
 ---
 
-### 2.2 SRT 테스트 메뉴
+### 2.2 SRT 즐겨찾기 테스트 메뉴
 
-메뉴 위치: 티머니 메인 - 킥보드 진입
+메뉴 위치: 티머니 메인 - 더보기 - [SRT]테스트 메뉴
 
 #### 메뉴 리스트
 
 | 메뉴 명 | 함수 호출 | 설명 |
 |---------|----------|-----|
-| 24.즐겨찾기 동기화 | `TRFavoriteManager.shared.remoteFavoriteSync()` | 앱 시작 시 호출. 앱 DB 전체 삭제 후 서버의 즐겨찾기 정보 전체 데이터 DB에 저장 (외부에서 사용) |
-| 25.즐겨찾기 가져오기 | `TRFavoriteManager.shared.localFavoriteList()` | 앱 DB에 저장된 즐겨찾기 정보 전달 |
-| 26.즐겨찾기 추가 | `TRFavoriteManager.shared.insertFavorite()` | 앱 DB 추가 후 서버 통신하여 즐겨찾기 정보 추가 |
-| 27.즐겨찾기 업데이트(Pin) | `TRFavoriteManager.shared.modifyPin()` | 즐겨찾기에 핀정보 설정 (외부에서 사용) |
-| 28.즐겨찾기 업데이트(별명) | `TRFavoriteManager.shared.modifyNickname()` | 즐겨찾기에 닉네임 설정 (외부에서 사용) |
-| 29즐겨찾기 삭제 | `TRFavoriteManager.shared.deleteFavorite()` | 앱 DB 삭제 후 서버 통신하여 즐겨찾기 정보 삭제 (외부에서 사용) |
+| 25.즐겨찾기 동기화 | `TRFavoriteManager.shared.remoteFavoriteSync()` | 앱 시작 시 호출. 앱 DB 전체 삭제 후 서버의 즐겨찾기 정보 전체 데이터 DB에 저장 (외부에서 사용) |
+| 26.즐겨찾기 가져오기 | `TRFavoriteManager.shared.localFavoriteList()` | 앱 DB에 저장된 즐겨찾기 정보 전달 |
+| 27.즐겨찾기 추가 | `TRFavoriteManager.shared.insertFavorite()` | 앱 DB 추가 후 서버 통신하여 즐겨찾기 정보 추가 |
+| 28.즐겨찾기 업데이트(Pin) | `TRFavoriteManager.shared.modifyPin()` | 즐겨찾기에 핀정보 설정 (외부에서 사용) |
+| 29.즐겨찾기 업데이트(별명) | `TRFavoriteManager.shared.modifyNickname()` | 즐겨찾기에 닉네임 설정 (외부에서 사용) |
+| 30.즐겨찾기 삭제 | `TRFavoriteManager.shared.deleteFavorite()` | 앱 DB 삭제 후 서버 통신하여 즐겨찾기 정보 삭제 (외부에서 사용) |
