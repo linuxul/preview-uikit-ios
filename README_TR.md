@@ -14,7 +14,7 @@ func startSRTMain()
 * 진입 시 SRT 메인으로 이동
 * SRT 홈으로 진입하려면 먼저 트래픽 제어를 실행한 후 메인 화면으로 이동
 
-#### 1.2. 딥링크
+### 1.2. 딥링크
 ```swift
     enum TRDeeplinkType {
       /// 미정 - 데이터 확인 필요
