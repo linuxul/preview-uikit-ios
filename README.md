@@ -25,7 +25,7 @@ func startSRTMain()
       case refundComplete
       /// 결제 상세
       case paymentDetail
-  }
+    }
 
 - **사용 함수**: `TRCoordinator.shared.gotoMainProxy()`
    - 이 함수는 앱의 데이터베이스(DB)에 저장된 즐겨찾기 정보를 처리합니다.
@@ -39,7 +39,7 @@ func startSRTMain()
 #### 실행 리스트
 
 | 메뉴 명 | 함수 호출 |
-|---------|----------|-----|
+|---------|----------|
 | 열차 승차권(딥링크)| `TRCoordinator.shared.gotoMainProxy(TRMainProxyModel(type: .detailTicket, pnrNo: "320231100657714"))` |
 | 승차권 환불(딥링크) | `TRCoordinator.shared.gotoMainProxy(TRMainProxyModel(type: .refundComplete, pnrNo: "320231100657714"))` | 
 | 결제 상세정보(딥링크) | `TRCoordinator.shared.gotoMainProxy(TRMainProxyModel(type: .paymentDetail, pnrNo: "320231100657714"))` | 
