@@ -26,6 +26,7 @@ func startSRTMain()
       /// 결제 상세
       case paymentDetail
     }
+    
 
 - **사용 함수**: `TRCoordinator.shared.gotoMainProxy()`
    - 이 함수는 앱의 데이터베이스(DB)에 저장된 즐겨찾기 정보를 처리합니다.
