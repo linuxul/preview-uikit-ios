@@ -3,6 +3,8 @@
 
 ### 1.1. SRT 진입점 
 
+- 테스트 메뉴 위치: 티머니 메인 - 더보기 - [SRT]테스트 메뉴
+
 #### 일반적인 사용 TRCoordinator.shared.startSRTMain()
 
 #### 외부에서 출발, 도착지를 선택 시 TRCoordinator.shared.startSRTMain(model)
@@ -18,7 +20,7 @@ func startSRTMain(_ model: TRMainModel? = nil)
 * **Parameter**: `model` - 딥링크 처럼 외부에서 출발, 도착지를 선택하여 SRT를 실행 할 경우 처리를 하기 위함.
 
 
-| 메뉴 명 | 함수 호출 |
+| 테스트 메뉴 명 | 함수 호출 |
 |---------|----------|
 | 33.(딥링크) SRT 메인 - 출도착지 변경| `TRCoordinator.shared.startSRTMain(TRMainModel(departureStation: TRBaseStationModel(stationCode: "0297", stationName: "오송"), arrivalStation: TRBaseStationModel(stationCode: "0053", stationName: "여수EXPO")))` |
 
@@ -46,11 +48,9 @@ func startSRTMain(_ model: TRMainModel? = nil)
 
 ### 1.2 SRT 딥링크 테스트 메뉴
 
-메뉴 위치: 티머니 메인 - 더보기 - [SRT]테스트 메뉴
-
 #### 메뉴 리스트
 
-| 메뉴 명 | 함수 호출 |
+| 테스트 메뉴 명 | 함수 호출 |
 |---------|----------|
 | 31.(딥링크) 예매완료 한 경우 : 승차권 화면| `TRCoordinator.shared.gotoMainProxy(TRMainProxyModel(type: .detailTicket, pnrNo: "320231200659453"))` |
 | 32.(딥링크) 환불완료 한 경우 : 환불 승차권 화면 | `TRCoordinator.shared.gotoMainProxy(TRMainProxyModel(type: .refundTicket, pnrNo: "320231200659453"))` | 
@@ -135,11 +135,9 @@ func deleteFavorite(departureCode: String, arrivalCode: String, completion: @esc
 
 ### 2.2 SRT 즐겨찾기 테스트 메뉴
 
-메뉴 위치: 티머니 메인 - 더보기 - [SRT]테스트 메뉴
-
 #### 메뉴 리스트
 
-| 메뉴 명 | 함수 호출 | 설명 |
+| 테스트 메뉴 명 | 함수 호출 | 설명 |
 |---------|----------|-----|
 | 25.즐겨찾기 동기화 | `TRFavoriteManager.shared.remoteFavoriteSync()` | 앱 시작 시 호출. 앱 DB 전체 삭제 후 서버의 즐겨찾기 정보 전체 데이터 DB에 저장 (외부에서 사용) |
 | 26.즐겨찾기 가져오기 | `TRFavoriteManager.shared.localFavoriteList()` | 앱 DB에 저장된 즐겨찾기 정보 전달 |
