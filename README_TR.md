@@ -3,31 +3,38 @@
 
 ### 1.1. SRT 진입점 
 
-#### 사용 TRCoordinator.shared.startSRTMain()
+#### 일반적인 사용 TRCoordinator.shared.startSRTMain()
+
+#### 외부에서 출발, 도착지를 선택 시 TRCoordinator.shared.startSRTMain(model)
 
 #### 함수
 
 - **startSRTMain**
 ```swift
-func startSRTMain()
+func startSRTMain(_ model: TRMainModel? = nil)
 ```
 * 진입 시 SRT 메인으로 이동
 * SRT 홈으로 진입하려면 먼저 트래픽 제어를 실행한 후 메인 화면으로 이동
+* **Parameter**: `model` - 딥링크 처럼 외부에서 출발, 도착지를 선택하여 SRT를 실행 할 경우 처리를 하기 위함.
+
+
+| 메뉴 명 | 함수 호출 |
+|---------|----------|
+| 33.(딥링크) SRT 메인 - 출도착지 변경| `TRCoordinator.shared.startSRTMain(TRMainModel(departureStation: TRBaseStationModel(stationCode: "0297", stationName: "오송"), arrivalStation: TRBaseStationModel(stationCode: "0053", stationName: "여수EXPO")))` |
 
 ### 1.2. 딥링크
-  앱의 딥링크 처리를 하기 위해서 유량제어, 기초 데이터 처리를 한 후 필요한 뷰 이동
+  - 앱 내에서 딥링크 처리를 위해, 유량 제어 및 기본 데이터 처리 후 필요한 뷰로 이동합니다.
+  - **타입 선언**: 
     ```swift
     enum TRDeeplinkType {
       /// 미정 - 데이터 확인 필요
       case unknown
-      /// 승차권 상세
+      /// 예매완료 한 경우 : 승차권 화면
       case detailTicket
-      /// 환급 완료 상세
-      case refundComplete
-      /// 결제 상세
-      case paymentDetail
+      /// 환불완료 한 경우 : 환불 승차권 화면
+      case refundTicket
     }
-    ```swift
+    ```
 
 - **사용 함수**: `TRCoordinator.shared.gotoMainProxy()`
    - 이 함수는 앱의 딥링크 처리를 하기 위해서 유량제어, 기초 데이터 처리를 한 후 필요한 뷰 이동
@@ -35,7 +42,7 @@ func startSRTMain()
       ```swift
       func gotoMainProxy(_ mainProxyModel: TRMainProxyModel)
       ```
-   - **파라미터**: `mainProxyModel` - 딥링크 정보를 포함합니다. 이를 통해 예약번호(`pnrNo`)를 사용하여 특정 티켓 상세 정보, 환불 완료 정보, 결제 상세 정보 등을 처리할 수 있습니다.
+   - **파라미터**: `mainProxyModel` - 딥링크 정보를 포함합니다. 이를 통해 예약번호(`pnrNo`)를 사용하여 특정 승차권 화면, 환불 승차권 화면으로 이동
 
 ### 1.2 SRT 딥링크 테스트 메뉴
 
@@ -45,9 +52,8 @@ func startSRTMain()
 
 | 메뉴 명 | 함수 호출 |
 |---------|----------|
-| 31.열차 승차권(딥링크)| `TRCoordinator.shared.gotoMainProxy(TRMainProxyModel(type: .detailTicket, pnrNo: "320231100657714"))` |
-| 32.승차권 환불(딥링크) | `TRCoordinator.shared.gotoMainProxy(TRMainProxyModel(type: .refundComplete, pnrNo: "320231100657714"))` | 
-| 33.결제 상세정보(딥링크) | `TRCoordinator.shared.gotoMainProxy(TRMainProxyModel(type: .paymentDetail, pnrNo: "320231100657714"))` | 
+| 31.(딥링크) 예매완료 한 경우 : 승차권 화면| `TRCoordinator.shared.gotoMainProxy(TRMainProxyModel(type: .detailTicket, pnrNo: "320231200659453"))` |
+| 32.(딥링크) 환불완료 한 경우 : 환불 승차권 화면 | `TRCoordinator.shared.gotoMainProxy(TRMainProxyModel(type: .refundTicket, pnrNo: "320231200659453"))` | 
 
 
 ## 2. SRT 즐겨찾기 사용법
