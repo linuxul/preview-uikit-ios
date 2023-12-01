@@ -5,9 +5,11 @@
 
 - 테스트 메뉴 위치: 티머니 메인 - 더보기 - [SRT]테스트 메뉴
 
-#### 일반적인 사용 TRCoordinator.shared.startSRTMain()
+#### 일반적인 사용 
+- TRCoordinator.shared.startSRTMain()
 
-#### 외부에서 출발, 도착지를 선택 시 TRCoordinator.shared.startSRTMain(model)
+#### 외부에서 출발, 도착지를 선택 시 
+- TRCoordinator.shared.startSRTMain(model)
 
 #### 함수
 
@@ -19,6 +21,7 @@ func startSRTMain(_ model: TRMainModel? = nil)
 * SRT 홈으로 진입하려면 먼저 트래픽 제어를 실행한 후 메인 화면으로 이동
 * **Parameter**: `model` - 딥링크 처럼 외부에서 출발, 도착지를 선택하여 SRT를 실행 할 경우 처리를 하기 위함.
 
+#### 테스트 메뉴 참조
 
 | 테스트 메뉴 명 | 함수 호출 |
 |---------|----------|
@@ -48,7 +51,7 @@ func startSRTMain(_ model: TRMainModel? = nil)
 
 ### 1.2 SRT 딥링크 테스트 메뉴
 
-#### 메뉴 리스트
+#### 테스트 메뉴 참조
 
 | 테스트 메뉴 명 | 함수 호출 |
 |---------|----------|
@@ -135,7 +138,7 @@ func deleteFavorite(departureCode: String, arrivalCode: String, completion: @esc
 
 ### 2.2 SRT 즐겨찾기 테스트 메뉴
 
-#### 메뉴 리스트
+#### 테스트 메뉴 참조
 
 | 테스트 메뉴 명 | 함수 호출 | 설명 |
 |---------|----------|-----|
